@@ -1,3 +1,14 @@
+//grab display element from html
+//create empty inputs string and empty array, that holds all pushed numbers and symbols
+//add event listener for a click
+//use temp string to build numbers, until symbol input is received
+//when symbol input recieved, turn string to number, and add to array
+//add symbol to array
+//input array should then contain number, symbol, number, symbol etc
+//when = sign inputted, loop through array, take number and symbol and +=, -= etc through whole array.
+//return final total, display this in display.
+
+
 let numStr = ''; // will hold user inputs as a string
 let numArr = []; // will hold the pushed input strings in an array
 
@@ -22,6 +33,7 @@ function getButtonValue(e) {
     }
     else if (button === "=") {
         calculate()
+        playAudio()
     }
     // if +, -, * or / is clicked
     else {
@@ -100,10 +112,10 @@ function calculate() {
             case '-':
                 currentNumber -= nextNumber
                 break;
-            case '*':
+            case 'x':
                 currentNumber *= nextNumber
                 break;
-            case '/':
+            case '÷':
                 currentNumber /= nextNumber
                 break;
         }
@@ -114,4 +126,9 @@ function calculate() {
     numStr = JSON.stringify(currentNumber)
     previousResult = true
     numArr = []
+}
+
+function playAudio() {
+    var audio = new Audio('cash-register.wav');
+    audio.play();
 }

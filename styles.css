@@ -17,9 +17,8 @@ h1 {
     text-align: center;
     color: #fff;
     font-size: 4rem;
-    margin: 0 auto;
-    position: relative;
-    top:10rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
 }
 
 .calculator-grid {
@@ -65,3 +64,13 @@ h1 {
     border: 1px solid #fff;
 }
 
+@media (max-width: 530px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .calculator-grid {
+        grid-template-columns: repeat(4, 80px);
+        grid-template-rows: minmax(80px, auto) repeat(5, 80px);
+    }
+}
